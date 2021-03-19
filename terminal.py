@@ -80,7 +80,7 @@ def main(user_cmd=None):
     completer = NestedCompleter.from_nested_dict({c: None for c in choices})
 
     # Print first welcome message and help
-    print("\nWelcome to Gamestonk Terminal 🚀\n")
+    print("\nWelcome to Gamestonk Terminal\n")
     should_print_help = True
 
     # Loop forever and ever

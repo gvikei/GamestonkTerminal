@@ -53,7 +53,6 @@ def process(message):
         'terminal.py'
     ])
     all_cmds = (cmd_args + conda_args +python_args)
-    print(all_cmds)
     python = subprocess.Popen(
         all_cmds,
         shell=True,
@@ -101,8 +100,9 @@ if not DEBUGGING:
 
 else:
     def main(args):
-        user_cmd = args[0]
-        print(process(user_cmd))
+        user_cmd =  args[0] if len(args) > 0 else ""
+        process(user_cmd)
+
 
     if __name__ == "__main__":
        main(sys.argv[1:])
