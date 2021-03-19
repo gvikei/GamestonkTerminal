@@ -66,6 +66,7 @@ defusedxml==0.7.1
 Deprecated==1.2.11
 deprecation==2.1.0
 dill==0.3.3
+discord.py==1.6.0
 distributed==1.26.0
 docker==4.4.0
 docutils==0.14
