@@ -1,5 +1,6 @@
 import discord
 import random
+import subprocess
 
 from io import StringIO
 import sys
@@ -36,8 +37,37 @@ s_start = ""
 s_interval = "1440min"
 
 def process(message):
-    return f'Got {message} from user!'
-    # get_stdout(terminal.main)
+    cmd_args = ' '.join([
+        '%windir%\System32\cmd.exe',
+        '"/K"',
+        r'C:\Users\Public\Anaconda3\Scripts\activate.bat',
+        r'C:\Users\Public\Anaconda3'
+    ]) + ' | '
+    conda_args = ' '.join([
+        'conda',
+        'activate',
+        'GamestonkTerminal'
+    ]) + ' | '
+    python_args = ' '.join([
+        'python',
+        'terminal.py'
+    ])
+    all_cmds = (cmd_args + conda_args +python_args)
+    print(all_cmds)
+    python = subprocess.Popen(
+        all_cmds,
+        shell=True,
+        stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        encoding='cp1252'
+        )
+    for stdout_line in iter(python.stdout.readline, ""):
+        yield stdout_line
+    return_code = python.wait()
+    if return_code:
+        raise subprocess.CalledProcessError(return_code, message)
+
 
 def get_stdout(func, *args, **kwargs):
     with Capturing() as output:

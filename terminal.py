@@ -30,7 +30,7 @@ from gamestonk_terminal.fred import fred_menu as fm
 
 
 # pylint: disable=too-many-branches
-def main():
+def main(user_cmd=None):
     """
     Gamestonk Terminal is an awesome stock market terminal that has been developed for fun,
     while I saw my GME shares tanking. But hey, I like the stock.
@@ -100,6 +100,9 @@ def main():
         if not as_input:
             print("")
             continue
+
+        if user_cmd is not None:
+            as_input = user_cmd
 
         # Parse main command of the list of possible commands
         try:
