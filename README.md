@@ -115,16 +115,18 @@ Note: At the end, you can deactivate it with: `conda deactivate`
 
 Navigate into the folder with: `cd GamestonkTerminal/`
 
-5. Install poetry
+5. Install fbprophet for conda
+
 ```
-conda install poetry
+conda install -c conda-forge fbprophet=0.6
+conda install spyder
+conda install gensim=3.8.3
 ```
 
-6. Install poetry dependencies
+6. Install dependencies
 ```
-poetry install
+pip install --user --requirement requirements-new.txt
 ```
-This is a library for package management, and ensures a smoother experience than: ``pip install -r requirements.txt``
 
 7.  You're ready to Gamestonk it!
 
