@@ -330,7 +330,6 @@ tqdm==4.59.0
 traitlets==4.3.3
 transformers==3.5.1
 treepick==0.1.4
--e git+https://msasg.visualstudio.com/DefaultCollection/Bing_Ads/_git/rap-algo@819006c4a9baebd9fd11f9c78565ed93b6885afe#egg=tunekit_rap&subdirectory=projects\tunekit-rap
 typed-ast==1.4.2
 typing-extensions==3.7.4.3
 tzlocal==1.5.1
